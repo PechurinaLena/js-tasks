@@ -10,3 +10,5 @@
  4. Get sum of pageCount in an object array
     [check here](https://codepen.io/pechurinalena/pen/WNRWBQZ?editors=0001)
     
+ 5. Get unique number in array 
+    [check here](https://codepen.io/pechurinalena/pen/rNjbgoX)
