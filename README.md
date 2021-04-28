@@ -7,3 +7,6 @@
  3. Get a new array only with elements which have (isMarked: true)
     [check here](https://codepen.io/pechurinalena/pen/NWdmJwV?editors=1111)
     
+ 4. Get sum of pageCount in an object array
+    [check here](https://codepen.io/pechurinalena/pen/WNRWBQZ?editors=0001)
+    
