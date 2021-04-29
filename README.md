@@ -12,3 +12,7 @@
     
  5. Get unique number in array 
     [check here](https://codepen.io/pechurinalena/pen/rNjbgoX)
+    
+# Task 2
+  1. Write a bind function 
+    [check here](https://codepen.io/pechurinalena/pen/NWdVjgw)
