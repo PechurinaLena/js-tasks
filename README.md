@@ -16,3 +16,5 @@
 # Task 2
   1. Write a bind function 
     [check here](https://codepen.io/pechurinalena/pen/NWdVjgw)
+  2. Using 'call method' for get counts
+    [check here](https://codepen.io/pechurinalena/pen/abprwBN)
