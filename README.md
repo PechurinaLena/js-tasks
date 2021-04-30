@@ -18,3 +18,7 @@
     [check here](https://codepen.io/pechurinalena/pen/NWdVjgw)
   2. Using 'call method' for get counts
     [check here](https://codepen.io/pechurinalena/pen/abprwBN)
+     
+# Task 3 
+  1. implement a function which change status in the table from 'Pending' to 'Done'
+    [click here](https://codepen.io/pechurinalena/pen/JjEqMVw)
