@@ -21,4 +21,4 @@
      
 # Task 3 
   1. implement a function which change status in the table from 'Pending' to 'Done'
-    [click here](https://codepen.io/pechurinalena/pen/JjEqMVw)
+    [click here](https://codepen.io/pechurinalena/pen/JjEqMVw) 
