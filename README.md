@@ -29,3 +29,5 @@
   2. 
   3. Write Promise to check current seconds and output different results
     [check here](https://codepen.io/pechurinalena/pen/QWdXEZP?editors=0012)
+  4. Rewrite demoGithubUser function with loop
+   [check here](https://codepen.io/pechurinalena/pen/XWpLNZy)
