@@ -22,3 +22,7 @@
 # Task 3 
   1. implement a function which change status in the table from 'Pending' to 'Done'
     [click here](https://codepen.io/pechurinalena/pen/JjEqMVw) 
+     
+# Task 4
+  1. Using 'Promise method' - show "hi" after 2 sec
+    [click here](https://codepen.io/pechurinalena/pen/jOyjbvo?e~~~~ditors=1012)
