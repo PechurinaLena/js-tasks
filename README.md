@@ -21,7 +21,9 @@
      
 # Task 3 
   1. implement a function which change status in the table from 'Pending' to 'Done'
-    [click here](https://codepen.io/pechurinalena/pen/JjEqMVw) 
+    [click here](https://codepen.io/pechurinalena/pen/JjEqMVw)
+  2. Add form with two inputs , where the secondInput repeat value of the firstInput after 1 second
+    [check here](https://codepen.io/pechurinalena/pen/yLgmvYM?editors=1011)
      
 # Task 4
   1. Using 'Promise method' - show "hi" after 2 sec

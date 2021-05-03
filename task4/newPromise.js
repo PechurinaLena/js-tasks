@@ -1,7 +1,7 @@
 setInterval(function () {
-    let promise = new Promise((resolve, reject) => {
+    const promise = new Promise((resolve, reject) => {
         setInterval(function () {
-            let current = Math.floor(Math.random() * 8 + 1)
+            const current = Math.floor(Math.random() * 8 + 1)
 
             if (current <= 2) {
                 resolve('result')

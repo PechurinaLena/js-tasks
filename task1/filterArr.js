@@ -44,6 +44,6 @@ const notes = [
   }
 ]
 
-const filter = notes.filter(el => el.isMarked === true )
+const filterNotes = notes.filter(notes => notes.isMarked)
 
-console.log(filter)
+console.log(filterNotes)

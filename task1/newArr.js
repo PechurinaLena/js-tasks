@@ -45,10 +45,10 @@ const notes = [
 ]
 
 const newArray = notes.map(
-  obj => {
+  note => {
     return {
-      id: obj.id,
-      title: obj.title
+      id: note.id,
+      title: note.title
     };
   });
 console.log(newArray)

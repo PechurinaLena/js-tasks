@@ -34,8 +34,5 @@ const notes = [
 ]
 
 let initialValue = 0
-let sum = notes.reduce(function (accumulator, currentValue) {
-  return accumulator + currentValue.pagesCount
-}, initialValue)
-
-console.log(sum)
+const sumOfNotesPages = notes.reduce((sum, note) => sum + note.pagesCount, initialValue)
+console.log(sumOfNotesPages)

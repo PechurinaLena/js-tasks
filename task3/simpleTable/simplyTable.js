@@ -1,18 +1,33 @@
-let mybtn = document.getElementById('btn')
+const STATUSES = {
+    pending: 'Pending',
+    done: 'Done',
+    failed: 'Failed',
+}
 
-mybtn.onclick = function () {
+const COLORS = {
+    grey: '#85929E',
+}
+
+const TIME = {
+    delay: 3000,
+    repeat: 5000,
+}
+
+const myBtn = document.getElementById('btn')
+
+myBtn.onclick = function () {
     setTimeout(function () {
-        const myStatus = document.querySelectorAll('.pending')
-        let i = 0
-        let interval = setInterval(function () {
+        const interval = setInterval(function () {
             console.log('Check started')
-            if (myStatus[i].innerHTML === 'Pending') {
-                myStatus[i].innerHTML = 'Done'
-                myStatus[i].style.color = '#85929E'
-            }
-            if (++i === myStatus.length) {
+            const pendingStatuses = document.querySelectorAll('.pending')
+            const countOfElementsToChange = pendingStatuses.length
+            if (countOfElementsToChange) {
+                pendingStatuses[0].classList.remove('pending')
+                pendingStatuses[0].innerHTML = STATUSES.done
+                pendingStatuses[0].style.color = COLORS.grey
+            } else {
                 clearInterval(interval)
             }
-        }, 5000)
-    }, 3000)
+        }, TIME.repeat)
+    }, TIME.delay)
 }
