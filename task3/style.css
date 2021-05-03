@@ -85,3 +85,14 @@ li {
     background-color: inherit;
     color: #e71327;
 }
+
+/* FORM STYLES*/
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+#input1, #input2 {
+    margin: 0 10px;
+}
