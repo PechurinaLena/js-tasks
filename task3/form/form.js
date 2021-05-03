@@ -1,8 +1,13 @@
-let firstInput = document.getElementById('input1')
-let secondInput = document.getElementById('input2')
+const TIME = {
+    delay: 1000,
+}
 
 function repeat() {
-    setTimeout(function () {
-        secondInput.value = firstInput.value
-    }, 1000)
+    let firstInput = document.getElementById('firstInput')
+    let secondInput = document.getElementById('secondInput')
+    firstInput.addEventListener('keyup', function () {
+        setTimeout(function () {
+            secondInput.value = firstInput.value
+        }, TIME.delay)
+    })
 }

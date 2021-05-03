@@ -93,6 +93,6 @@ li {
     justify-content: center;
 }
 
-#input1, #input2 {
+#firstInput, #secondInput {
     margin: 0 10px;
 }
