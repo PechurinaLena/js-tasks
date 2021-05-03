@@ -26,7 +26,8 @@
 # Task 4
   1. Using 'Promise method' - show "hi" after 2 sec
     [click here](https://codepen.io/pechurinalena/pen/jOyjbvo?e~~~~ditors=1012)
-  2. 
+  2. Rewrite function makeDroids()
+     [check here](https://codepen.io/pechurinalena/pen/yLgdeQb?editors=0012)
   3. Write Promise to check current seconds and output different results
     [check here](https://codepen.io/pechurinalena/pen/QWdXEZP?editors=0012)
   4. Rewrite demoGithubUser function with loop
