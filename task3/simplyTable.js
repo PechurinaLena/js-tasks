@@ -2,17 +2,17 @@ let mybtn = document.getElementById('btn')
 
 mybtn.onclick = function () {
     setTimeout(function () {
+        const myStatus = document.querySelectorAll('.pending')
+        let i = 0
         let interval = setInterval(function () {
-            console.log('Check started')
-            const myStatus = document.querySelectorAll('.status')
-            for (let i = 0; i <= myStatus.length - 1; i++) {
-                if (myStatus[i].innerHTML === 'Pending') {
-                    myStatus[i].innerHTML = 'Done'
-                    myStatus[i].style.color = '#85929E'
-                } else if (myStatus[i].innerHTML !== 'Pending') {
-                    clearInterval(interval)
-                }
+            if (myStatus[i].innerHTML === 'Pending') {
+                console.log('Check started')
+                myStatus[i].innerHTML = 'Done'
+                myStatus[i].style.color = '#85929E'
             }
-        }, 1000)
-    }, 1000)
+            if (++i === myStatus.length) {
+                clearInterval(interval)
+            }
+        }, 5000)
+    }, 3000)
 }
