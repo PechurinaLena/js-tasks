@@ -1,13 +1,17 @@
 // polyfill for map function
-// if (!Array.prototype.map) {
-//   Array.prototype.map = function(cb) {
-//     let newArray = [];
-//     for(let item of this) {
-//       newArray.push(cb(item));
-//     }
-//     return newArray;
-//   }
-// }
+Array.prototype.customMap = function (cb) {
+    if (!cb || typeof cb !== 'function') {
+        throw Error('cd is not a function')
+    }
+    if (!this) {
+        throw Error('Cannot call map on null or undefined')
+    }
+    let newArray = []
+    for (let item of this) {
+        newArray.push(cb(item))
+    }
+    return newArray
+}
 
 const notes = [
     {
@@ -44,7 +48,7 @@ const notes = [
     },
 ]
 
-const newArray = notes.map((note) => ({
+const newArray = notes.customMap((note) => ({
     id: note.id,
     title: note.title,
 }))

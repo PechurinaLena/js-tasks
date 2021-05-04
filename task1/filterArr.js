@@ -1,13 +1,19 @@
 //polyfill for filter function
-// Array.prototype.filterNotes = function(callback, context) {
-//   let arr = []
-//   for (let i = 0; i < this.length; i++) {
-//     if (callback.call(context, this[i], i, this)) {
-//       arr.push(this[i])
-//     }
-//   }
-//   return arr
-// }
+Array.prototype.customFilter = function(cb) {
+  if (!cb || typeof cb !== 'function') {
+    throw Error('The cb is not a function');
+  }
+  if (!this) {
+    throw Error('Cannot call filter on null or undefined');
+  }
+  let arr = []
+  for (let i = 0; i < this.length; i++) {
+    if (cb(this[i], i, this)) {
+      arr.push(this[i])
+    }
+  }
+  return arr
+}
 
 const notes = [
   {
@@ -44,6 +50,6 @@ const notes = [
   }
 ]
 
-const filterNotes = notes.filter(notes => notes.isMarked)
+const filterNotes = notes.customFilter(notes => notes.isMarked)
 
 console.log(filterNotes)
