@@ -1,61 +1,40 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import Notes from "./Notes";
+import DisplayNote from "./DisplayNote";
+import data from "./data";
 import styles from "./styles.module.css";
 
-const data = [
-  {
-    title: "Breakfast",
-    description: "some description",
-    date: "date",
-  },
-  {
-    title: "Morning Yoga",
-    description: "some description for second",
-    date: "date",
-  },
-  {
-    title: "Meeting Call",
-    description: "some description for third",
-    date: "date",
-  },
-  {
-    title: "Lunch",
-    description: "some description for third",
-    date: "date",
-  },
-  {
-    title: "Work time",
-    description: "some description for third",
-    date: "date",
-  },
-  {
-    title: "Dinner with family",
-    description: "some description for third",
-    date: "date",
-  },
-  {
-    title: "Relaxing",
-    description: "some description for third",
-    date: "date",
-  },
-];
+/**
+ * NotesContainer component
+ * @constructor
+ */
 
 function NotesContainer() {
+  const [isDisplayed, setIsDisplayed] = useState(false);
+
+  const onChange = useCallback(() => setIsDisplayed(!isDisplayed), [
+    isDisplayed,
+  ]);
+
   return (
-    <>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.allNotes}>
         {data.map((item, key) => (
           <div key={key}>
             <Notes
+              id={item.id}
               title={item.title}
               description={item.description}
               date={item.date}
-              key={key}
+              onChange={onChange}
             />
           </div>
         ))}
       </div>
-    </>
+      <div className={styles.chosenNote}>
+        <DisplayNote isShow={isDisplayed} />
+      </div>
+    </div>
   );
 }
 

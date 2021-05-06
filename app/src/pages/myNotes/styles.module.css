@@ -25,6 +25,9 @@
   width: 90%;
   margin: 0 auto;
   padding: 10px;
+}
+
+.allNotes {
   background: aliceblue;
   border: 1px solid cadetblue;
   border-radius: 3px;
@@ -41,6 +44,10 @@
   flex-direction: row;
   border: 1px solid #d3d9da;
   border-radius: 3px;
+}
+
+.activeRow {
+  background: red;
 }
 
 .item {
@@ -62,4 +69,19 @@
   display: flex;
   justify-content: flex-end;
   color: #71a2f6;
+}
+
+.chosenNote {
+  display: flex;
+  justify-content: center;
+}
+
+.showBlock {
+  padding-top: 2rem;
+}
+
+.activeDescription {
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
