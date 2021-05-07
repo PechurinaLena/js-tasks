@@ -1,5 +1,6 @@
-import React, { useCallback, useState } from "react";
-import Notes from "./Notes";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { ListItem } from "@material-ui/core";
 import DisplayNote from "./DisplayNote";
 import data from "./data";
 import styles from "./styles.module.css";
@@ -9,33 +10,35 @@ import styles from "./styles.module.css";
  * @constructor
  */
 
-function NotesContainer() {
-  const [isDisplayed, setIsDisplayed] = useState(false);
+const NotesContainer = () => {
+  const [active, setActive] = useState(false);
 
-  const onChange = useCallback(() => setIsDisplayed(!isDisplayed), [
-    isDisplayed,
-  ]);
+  const Notes = ({ name }) => (
+    <ListItem button selected={active === name}>
+      <div className={styles.row} onClick={() => setActive(name)}>
+        <div className={[styles.item, styles.title].join(" ")}>
+          {name.title}
+        </div>
+        <div className={[styles.item, styles.description].join(" ")}>
+          {`${name.description.substring(0, 20)}...`}
+        </div>
+        <div className={[styles.item, styles.date].join(" ")}>{name.date}</div>
+      </div>
+    </ListItem>
+  );
 
   return (
-    <div className={styles.container}>
-      <div className={styles.allNotes}>
-        {data.map((item, key) => (
-          <div key={key}>
-            <Notes
-              id={item.id}
-              title={item.title}
-              description={item.description}
-              date={item.date}
-              onChange={onChange}
-            />
-          </div>
-        ))}
-      </div>
-      <div className={styles.chosenNote}>
-        <DisplayNote isShow={isDisplayed} />
-      </div>
-    </div>
+    <>
+      {data.map((item, key) => (
+        <Notes name={item} key={key} />
+      ))}
+      <DisplayNote selected={active} valueOf={1} />
+    </>
   );
-}
+};
+
+NotesContainer.propTypes = {
+  name: PropTypes.string,
+};
 
 export default NotesContainer;
