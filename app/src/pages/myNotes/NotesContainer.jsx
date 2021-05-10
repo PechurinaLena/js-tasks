@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { ListItem, IconButton } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
@@ -17,7 +17,23 @@ const NotesContainer = () => {
   const [notes, setNewNotes] = useState([]);
   const [edit, setEdit] = useState(null);
   const [isEditText, setIsEditText] = useState(" ");
-  console.log(notes);
+
+  useEffect(() => {
+    const arrStringify = localStorage.getItem("notes");
+    console.log(arrStringify, "arrStringify");
+
+    const loadedNotes = JSON.parse(arrStringify);
+    if (loadedNotes) {
+      setNewNotes(loadedNotes);
+      console.log(loadedNotes, "loadedNotes");
+    }
+  }, []);
+
+  useEffect(() => {
+    const arrStringify = JSON.stringify(notes);
+    localStorage.setItem("notes", arrStringify);
+  }, [notes]);
+
   //Press edit icon for change note
   function editNote(name) {
     const updatedNotes = [...data].map((item) => {
