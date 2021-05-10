@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <nav className={styles.mainNav}>
           <ul className={styles.menu}>
