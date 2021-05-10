@@ -93,3 +93,13 @@
   text-align: center;
   color: crimson;
 }
+
+.input[type="text"] {
+  font-size: inherit;
+  font-family: inherit;
+  background: inherit;
+}
+
+.button {
+  margin: 0 10px;
+}
