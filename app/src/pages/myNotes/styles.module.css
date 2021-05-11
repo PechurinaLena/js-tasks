@@ -42,6 +42,7 @@
   padding: 10px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   border: 1px solid #d3d9da;
   border-radius: 3px;
 }
@@ -52,6 +53,7 @@
 
 .item {
   display: flex;
+  margin: 0 5px;
 }
 
 .title {
@@ -94,10 +96,14 @@
   color: crimson;
 }
 
-.input[type="text"] {
+input[type="text"] {
   font-size: inherit;
   font-family: inherit;
-  background: inherit;
+  background: beige;
+  outline: none;
+  width: 100%;
+  border: 1px solid gainsboro;
+  padding: 5px;
 }
 
 .button {

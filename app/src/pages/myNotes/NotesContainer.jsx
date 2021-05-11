@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { ListItem, IconButton } from "@material-ui/core";
-import SaveIcon from "@material-ui/icons/Save";
-import EditIcon from "@material-ui/icons/Edit";
+import Notes from "./Notes";
 import DisplayNote from "./DisplayNote";
 import data from "./data";
-import styles from "./styles.module.css";
 
 /**
  * NotesContainer component
@@ -15,99 +11,37 @@ import styles from "./styles.module.css";
 const NotesContainer = () => {
   const [active, setActive] = useState(false);
   const [notes, setNewNotes] = useState(data);
-  const [edit, setEdit] = useState(null);
-  const [isEditText, setIsEditText] = useState(" ");
 
+  // Get changed array of notes to localStorage
   useEffect(() => {
     const arrStringify = localStorage.getItem("notes");
-    console.log(arrStringify, "arrStringify");
-
     const loadedNotes = JSON.parse(arrStringify);
     if (loadedNotes) {
       setNewNotes(loadedNotes);
-      console.log(loadedNotes, "loadedNotes");
     }
   }, []);
 
+  // Set changed array of notes to localStorage
   useEffect(() => {
     const arrStringify = JSON.stringify(notes);
     localStorage.setItem("notes", arrStringify);
   }, [notes]);
 
-  //Press edit icon for change note
-  function editNote(name) {
-    const updatedNotes = [...notes].map((item) => {
-      if (item.id === name.id) {
-        name.description = isEditText;
-      }
-      return item;
-    });
-    setNewNotes(updatedNotes);
-    setEdit(null);
-    setIsEditText("");
-  }
-
-  const Notes = ({ name }) => (
-      <ListItem button selected={active === name}>
-        <div className={styles.row} onClick={() => setActive(name)}>
-          <div className={[styles.item, styles.title].join(" ")}>
-            {name.title}
-          </div>
-          {edit === name ? (
-            <div className={[styles.item, styles.description].join(" ")}>
-              <input
-                className={styles.input}
-                type="text"
-                value={isEditText}
-                onChange={(e) => setIsEditText(e.target.value)}
-              />
-            </div>
-          ) : (
-            <div className={[styles.item, styles.description].join(" ")}>
-              {`${name.description.substring(0, 20)}...`}
-            </div>
-          )}
-          <div className={[styles.item, styles.date].join(" ")}>
-            {name.date}
-          </div>
-        </div>
-        {edit === name ? (
-          <IconButton
-            size="small"
-            variant="contained"
-            color="primary"
-            className={styles.button}
-            onClick={() => editNote(name)}
-          >
-            <SaveIcon />
-          </IconButton>
-        ) : (
-          <IconButton
-            size="small"
-            variant="contained"
-            color="secondary"
-            className={styles.button}
-            onClick={() => setEdit(name)}
-            onFocus={() => isEditText}
-          >
-            <EditIcon />
-          </IconButton>
-        )}
-      </ListItem>
-    );
-
   return (
     <>
       {notes.map((item, key) => (
-        <Notes name={item} key={key} />
+        <Notes
+          name={item}
+          key={key}
+          notes={notes}
+          setNewNotes={setNewNotes}
+          active={Boolean`${active}`}
+          setActive={setActive}
+        />
       ))}
       <DisplayNote selected={active} valueOf={1} />
     </>
   );
-};
-
-NotesContainer.propTypes = {
-  name: PropTypes.string,
 };
 
 export default NotesContainer;
