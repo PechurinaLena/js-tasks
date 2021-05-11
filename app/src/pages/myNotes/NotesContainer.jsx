@@ -14,7 +14,7 @@ import styles from "./styles.module.css";
 
 const NotesContainer = () => {
   const [active, setActive] = useState(false);
-  const [notes, setNewNotes] = useState([]);
+  const [notes, setNewNotes] = useState(data);
   const [edit, setEdit] = useState(null);
   const [isEditText, setIsEditText] = useState(" ");
 
@@ -36,7 +36,7 @@ const NotesContainer = () => {
 
   //Press edit icon for change note
   function editNote(name) {
-    const updatedNotes = [...data].map((item) => {
+    const updatedNotes = [...notes].map((item) => {
       if (item.id === name.id) {
         name.description = isEditText;
       }
@@ -98,7 +98,7 @@ const NotesContainer = () => {
 
   return (
     <>
-      {data.map((item, key) => (
+      {notes.map((item, key) => (
         <Notes name={item} key={key} />
       ))}
       <DisplayNote selected={active} valueOf={1} />
