@@ -1,0 +1,111 @@
+.mainNav {
+  display: flex;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menuItem {
+  list-style: none;
+}
+
+.menuLink {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #2e8bc0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.allNotes {
+  background: aliceblue;
+  border: 1px solid cadetblue;
+  border-radius: 3px;
+}
+
+.list {
+  background: #2e8bc0;
+}
+
+.row {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #d3d9da;
+  border-radius: 3px;
+}
+
+.activeRow {
+  background: red;
+}
+
+.item {
+  display: flex;
+  margin: 0 5px;
+}
+
+.title {
+  flex-basis: 20%;
+  font-weight: bold;
+  color: #f97f99;
+}
+
+.description {
+  flex-basis: 65%;
+}
+
+.date {
+  flex-basis: 15%;
+  display: flex;
+  justify-content: flex-end;
+  color: #71a2f6;
+}
+
+.chosenNote {
+  display: flex;
+  justify-content: center;
+}
+
+.showBlock {
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: lightgoldenrodyellow;
+}
+
+.activeDescription {
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.alternativeText {
+  text-align: center;
+  color: crimson;
+}
+
+input[type="text"] {
+  font-size: inherit;
+  font-family: inherit;
+  background: beige;
+  outline: none;
+  width: 100%;
+  border: 1px solid gainsboro;
+  padding: 5px;
+}
+
+.button {
+  margin: 0 10px;
+}
